@@ -1,0 +1,60 @@
+{
+ "shard_id": "train_00004",
+ "split": "train",
+ "parent_shard_id": null,
+ "n_tokens": 16777217,
+ "n_sequences": 32768,
+ "seq_len": 512,
+ "dtype": "uint16 token ids",
+ "token_sha256": "4d524790c353af75c9f40b4b35990619cce46d511d2febbdfc72d78ca3c6f6e2",
+ "text_sha256": "d8a24c781effc623b6bc1cce22a08655a1ccba4ddd9893dbdbb051cadba541a5",
+ "n_docs": 20031,
+ "docs_index": "train_00004.docs.jsonl.gz",
+ "first_doc_continues_from_previous_shard": true,
+ "provenance": {
+  "dataset": "HuggingFaceFW/fineweb",
+  "config": "sample-10BT",
+  "split": "train",
+  "stream_rows": [
+   81632,
+   101665
+  ],
+  "common_crawl_dumps": {
+   "CC-MAIN-2013-20": 2573,
+   "CC-MAIN-2015-14": 2332,
+   "CC-MAIN-2016-30": 2125,
+   "CC-MAIN-2017-34": 3033,
+   "CC-MAIN-2018-34": 2309,
+   "CC-MAIN-2019-35": 2371,
+   "CC-MAIN-2020-45": 2096,
+   "CC-MAIN-2022-21": 3192
+  }
+ },
+ "cleaning": {
+  "upstream": "FineWeb's own pipeline (see its dataset card): URL filtering, text extraction, English language ID, quality and repetition filters, MinHash deduplication within each Common Crawl dump, PII anonymisation",
+  "here": "rows shorter than 200 characters dropped",
+  "rows_dropped": 3
+ },
+ "dedup": "FineWeb MinHash within each dump; not re-checked across dumps here",
+ "contamination": "not checked against evaluation benchmarks",
+ "eval_overlap": "none: training shard",
+ "language": {
+  "code": "en",
+  "mean_fineweb_language_score": 0.9281
+ },
+ "lane": "general English web text",
+ "tokenizer": {
+  "file": "tokenizer.json",
+  "sha256": "48eb678884e4378351f66f2208ad59e7f97f5b2dabf8cee009dbddb3611e7fa7",
+  "vocab": 8192,
+  "eos": "<|endoftext|>"
+ },
+ "packing": "documents concatenated with EOS between them, no padding; windows of seq_len + 1 tokens at stride seq_len (100% of tokens are real text)",
+ "pipeline_sha256": "d0876088e642024282db4056df4e926d43a8cdc50d3c0fdc38007f80fcdc884d",
+ "next": {
+  "row": 101665,
+  "token_offset": 6812
+ },
+ "created": "2026-09-29 17:21:24",
+ "build_seconds": 9.5
+}

@@ -1,0 +1,60 @@
+{
+ "shard_id": "train_00010",
+ "split": "train",
+ "parent_shard_id": null,
+ "n_tokens": 16777217,
+ "n_sequences": 32768,
+ "seq_len": 512,
+ "dtype": "uint16 token ids",
+ "token_sha256": "e4881e1dd5ae7a257d334ed95c50dfbd94375816e92f1ba9886578654ea3b42e",
+ "text_sha256": "cbeb4a67a976f862334641e27b84b8c78f0d1a9cd28a3c33a1212f31abe9f0ed",
+ "n_docs": 20411,
+ "docs_index": "train_00010.docs.jsonl.gz",
+ "first_doc_continues_from_previous_shard": true,
+ "provenance": {
+  "dataset": "HuggingFaceFW/fineweb",
+  "config": "sample-10BT",
+  "split": "train",
+  "stream_rows": [
+   203652,
+   224066
+  ],
+  "common_crawl_dumps": {
+   "CC-MAIN-2013-20": 2380,
+   "CC-MAIN-2015-14": 2242,
+   "CC-MAIN-2016-30": 2038,
+   "CC-MAIN-2017-34": 3089,
+   "CC-MAIN-2018-34": 2335,
+   "CC-MAIN-2019-35": 2601,
+   "CC-MAIN-2020-45": 2345,
+   "CC-MAIN-2022-21": 3381
+  }
+ },
+ "cleaning": {
+  "upstream": "FineWeb's own pipeline (see its dataset card): URL filtering, text extraction, English language ID, quality and repetition filters, MinHash deduplication within each Common Crawl dump, PII anonymisation",
+  "here": "rows shorter than 200 characters dropped",
+  "rows_dropped": 4
+ },
+ "dedup": "FineWeb MinHash within each dump; not re-checked across dumps here",
+ "contamination": "not checked against evaluation benchmarks",
+ "eval_overlap": "none: training shard",
+ "language": {
+  "code": "en",
+  "mean_fineweb_language_score": 0.9282
+ },
+ "lane": "general English web text",
+ "tokenizer": {
+  "file": "tokenizer.json",
+  "sha256": "48eb678884e4378351f66f2208ad59e7f97f5b2dabf8cee009dbddb3611e7fa7",
+  "vocab": 8192,
+  "eos": "<|endoftext|>"
+ },
+ "packing": "documents concatenated with EOS between them, no padding; windows of seq_len + 1 tokens at stride seq_len (100% of tokens are real text)",
+ "pipeline_sha256": "d0876088e642024282db4056df4e926d43a8cdc50d3c0fdc38007f80fcdc884d",
+ "next": {
+  "row": 224066,
+  "token_offset": 1189
+ },
+ "created": "2026-09-29 17:22:23",
+ "build_seconds": 9.8
+}

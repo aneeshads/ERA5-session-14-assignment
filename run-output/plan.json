@@ -1,0 +1,26 @@
+{
+ "batch": 64,
+ "steps": 4000,
+ "t_dense": 0.09994092000001728,
+ "t_moe": 0.18981955469998865,
+ "device": "TPU v5 lite",
+ "created": "2026-09-29 17:20",
+ "budget_min": 40,
+ "fingerprint": {
+  "data": "fineweb/sample-10BT",
+  "seq": 512,
+  "vocab": 8192,
+  "d": 384,
+  "layers": 8,
+  "heads": 6,
+  "ffn": 1536,
+  "experts": 8,
+  "top_k": 2,
+  "capacity_factor": 1.25,
+  "group": 1024,
+  "lr": 0.001,
+  "seed": 0,
+  "shard_seqs": 32768
+ },
+ "t_dense_fp32": 0.1181210727999769
+}

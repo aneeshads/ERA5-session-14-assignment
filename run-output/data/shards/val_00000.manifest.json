@@ -1,0 +1,53 @@
+{
+ "shard_id": "val_00000",
+ "split": "validation",
+ "parent_shard_id": null,
+ "n_tokens": 65537,
+ "n_sequences": 128,
+ "seq_len": 512,
+ "dtype": "uint16 token ids",
+ "token_sha256": "1911768032a1dce205c91fe24f920cf07ebe910fd7583504d78cc2972655c3df",
+ "text_sha256": "7d10a66fcfebc02a2ec01bdc65d6c29b50b7e5a8c9766f5efaf5a4ae77665f28",
+ "n_docs": 79,
+ "docs_index": "val_00000.docs.jsonl.gz",
+ "first_doc_continues_from_previous_shard": false,
+ "provenance": {
+  "dataset": "HuggingFaceFW/fineweb",
+  "config": "sample-10BT",
+  "split": "train",
+  "stream_rows": [
+   327422,
+   327500
+  ],
+  "common_crawl_dumps": {
+   "CC-MAIN-2016-30": 79
+  }
+ },
+ "cleaning": {
+  "upstream": "FineWeb's own pipeline (see its dataset card): URL filtering, text extraction, English language ID, quality and repetition filters, MinHash deduplication within each Common Crawl dump, PII anonymisation",
+  "here": "rows shorter than 200 characters dropped",
+  "rows_dropped": 0
+ },
+ "dedup": "FineWeb MinHash within each dump; not re-checked across dumps here",
+ "contamination": "not checked against evaluation benchmarks",
+ "eval_overlap": "held out: every document here comes after every training document in the stream",
+ "language": {
+  "code": "en",
+  "mean_fineweb_language_score": 0.9344
+ },
+ "lane": "general English web text",
+ "tokenizer": {
+  "file": "tokenizer.json",
+  "sha256": "48eb678884e4378351f66f2208ad59e7f97f5b2dabf8cee009dbddb3611e7fa7",
+  "vocab": 8192,
+  "eos": "<|endoftext|>"
+ },
+ "packing": "documents concatenated with EOS between them, no padding; windows of seq_len + 1 tokens at stride seq_len (100% of tokens are real text)",
+ "pipeline_sha256": "d0876088e642024282db4056df4e926d43a8cdc50d3c0fdc38007f80fcdc884d",
+ "next": {
+  "row": 327500,
+  "token_offset": 1361
+ },
+ "created": "2026-09-29 17:23:11",
+ "build_seconds": 0.0
+}

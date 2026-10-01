@@ -1,0 +1,228 @@
+
+====================================================================================================
+session started 2026-09-29 17:19:36
+
+[17:19:36] outputs: /content/drive/MyDrive/session14_moe_fineweb
+[17:19:36] dense: 22.2M parameters
+[17:19:36] MoE:   71.8M total, 29.3M active per token (8 routed experts, top-2, 1 shared; 320 slots per expert per group of 1024)
+[17:19:36] gate 1  dispatch matches the token-by-token loop         max diff 6.1e-05
+[17:19:37] gate 2  capacity drops the right tokens (50% dropped)   max diff 6.1e-05
+[17:19:37] gate 3  converted MoE reproduces the dense model         max logit diff 8.9e-08
+[17:19:37] gate 4  gradient reaches the router and all 4 experts in every layer
+[17:19:39] gate 5  dense and MoE training steps each compiled once and were reused
+[17:19:39] all gates passed (3s)
+[17:20:05] batch 64: dense 100 ms/step (327,874 tok/s), MoE 190 ms/step -> 4000 steps per phase fit the budget  (first-call compile: 4s, 18s)
+[17:20:10] precision check (dense, batch 64): bf16 100 ms/step, fp32 118 ms/step -> bf16 is 1.18x faster. Training uses bf16.
+[17:20:10] PLAN  batch 64 x 512 tokens = 32,768 tokens per step
+[17:20:10]       phase 1 (dense): 4000 steps | phase 2: 4000 steps each for MoE and the dense control
+[17:20:10]       131M tokens per phase, 262M unique tokens needed
+[17:20:10]       warm-up 100 steps; learning rate 0.001 constant, then cosine to 10% over the last 1200 steps
+[17:20:10]       projected training time 26 min (+ data, compiling and evaluation); each run pauses at 1.5x its planned time
+[17:20:20] tokenizer text: 25,994 documents, 81 MB (10s)
+[17:20:35] tokenizer trained: 8,192 tokens (25s)
+[17:20:46] shard train_00000: 16.8M tokens from 20,227 documents, sha256 26aa059fb46f… (36s)
+[17:20:55] shard train_00001: 16.8M tokens from 20,294 documents, sha256 ad0ded0ca530… (45s)
+[17:21:04] shard train_00002: 16.8M tokens from 20,272 documents, sha256 75d34f61c95e… (55s)
+[17:21:06]   data: 53M / 269M tokens | 0.95M tok/s | ~3.8 min left
+[17:21:14] shard train_00003: 16.8M tokens from 20,823 documents, sha256 5a917449f503… (64s)
+[17:21:24] shard train_00004: 16.8M tokens from 20,031 documents, sha256 4d524790c353… (74s)
+[17:21:34] shard train_00005: 16.8M tokens from 20,392 documents, sha256 6cf16daaa6cb… (84s)
+[17:21:36]   data: 105M / 269M tokens | 1.23M tok/s | ~2.2 min left
+[17:21:43] shard train_00006: 16.8M tokens from 20,419 documents, sha256 bb1075c9fff4… (93s)
+[17:21:53] shard train_00007: 16.8M tokens from 20,423 documents, sha256 57e3145a620a… (103s)
+[17:22:03] shard train_00008: 16.8M tokens from 20,605 documents, sha256 1b3243ff957e… (113s)
+[17:22:06]   data: 156M / 269M tokens | 1.34M tok/s | ~1.4 min left
+[17:22:13] shard train_00009: 16.8M tokens from 20,129 documents, sha256 4959550dc268… (123s)
+[17:22:23] shard train_00010: 16.8M tokens from 20,411 documents, sha256 e4881e1dd5ae… (133s)
+[17:22:33] shard train_00011: 16.8M tokens from 21,014 documents, sha256 cc8570b70d6c… (143s)
+[17:22:36]   data: 209M / 269M tokens | 1.42M tok/s | ~0.7 min left
+[17:22:42] shard train_00012: 16.8M tokens from 20,490 documents, sha256 1d625b1f9b36… (152s)
+[17:22:52] shard train_00013: 16.8M tokens from 20,746 documents, sha256 240394eb3587… (162s)
+[17:23:02] shard train_00014: 16.8M tokens from 20,537 documents, sha256 7b2387655374… (172s)
+[17:23:06]   data: 261M / 269M tokens | 1.48M tok/s | ~0.1 min left
+[17:23:11] shard train_00015: 16.8M tokens from 20,557 documents, sha256 c9aa8705fe64… (181s)
+[17:23:11] shard val_00000: 0.1M tokens from 79 documents, sha256 1911768032a1… (181s)
+[17:23:12] 17 shards verified against their manifests (SHA-256) and copied to local disk
+[17:23:12] every step: 64 sequences x 513 tokens; rows 0–63 → TPU_0 (TPU v5 lite)
+[17:23:12] 512 steps per shard. Which shard each step reads (phase 2 starts at step 4000):
+[17:23:12]   steps      0 –    511   train_00002   phase 1 (dense)
+[17:23:12]   steps    512 –   1023   train_00011   phase 1 (dense)
+[17:23:12]   steps   1024 –   1535   train_00003   phase 1 (dense)
+[17:23:12]   steps   1536 –   2047   train_00010   phase 1 (dense)
+[17:23:12]   steps   2048 –   2559   train_00000   phase 1 (dense)
+[17:23:12]   steps   2560 –   3071   train_00004   phase 1 (dense)
+[17:23:12]   steps   3072 –   3583   train_00007   phase 1 (dense)
+[17:23:12]   steps   3584 –   4095   train_00005   phase 1 → phase 2
+[17:23:12]   steps   4096 –   4607   train_00014   phase 2 (MoE and control)
+[17:23:12]   steps   4608 –   5119   train_00012   phase 2 (MoE and control)
+[17:23:12]   steps   5120 –   5631   train_00006   phase 2 (MoE and control)
+[17:23:12]   steps   5632 –   6143   train_00009   phase 2 (MoE and control)
+[17:23:12]   steps   6144 –   6655   train_00013   phase 2 (MoE and control)
+[17:23:12]   steps   6656 –   7167   train_00008   phase 2 (MoE and control)
+[17:23:12]   steps   7168 –   7679   train_00001   phase 2 (MoE and control)
+[17:23:12]   steps   7680 –   7999   train_00015   phase 2 (MoE and control)
+[17:23:12] sample:  the note section. This process is automated – if you don’t receive an immediate invitation you either misspelled “techcruncher” or 100 people have already requested an invite with the code. If you ar
+[17:23:13] [1_dense] phase 1 dense: 4000 steps from global step 0; val loss at start 9.1012; planned 6.7 min
+[17:23:38] [1_dense] step    250 (250/4000, 6%) | shard train_00002 | train 5.4297 | val 5.4825 | 327,985 tok/s | loader 0.3 ms/step | 0.4 min, ~6.2 min left
+[17:24:03] [1_dense] step    500 (500/4000, 12%) | shard train_00002 | train 4.9352 | val 5.0396 | 327,986 tok/s | loader 0.3 ms/step | 0.8 min, ~5.8 min left
+[17:24:28] [1_dense] step    750 (750/4000, 19%) | shard train_00011 | train 4.6798 | val 4.7804 | 327,992 tok/s | loader 0.3 ms/step | 1.2 min, ~5.4 min left
+[17:24:53] [1_dense] step   1000 (1000/4000, 25%) | shard train_00011 | train 4.4394 | val 4.5709 | 327,944 tok/s | loader 0.3 ms/step | 1.7 min, ~5.0 min left
+[17:25:19] [1_dense] step   1250 (1250/4000, 31%) | shard train_00003 | train 4.2968 | val 4.4445 | 327,981 tok/s | loader 0.3 ms/step | 2.1 min, ~4.6 min left
+[17:25:44] [1_dense] step   1500 (1500/4000, 38%) | shard train_00003 | train 4.2043 | val 4.3544 | 327,955 tok/s | loader 0.3 ms/step | 2.5 min, ~4.2 min left
+[17:26:09] [1_dense] step   1750 (1750/4000, 44%) | shard train_00010 | train 4.1494 | val 4.2986 | 327,959 tok/s | loader 0.3 ms/step | 2.9 min, ~3.7 min left
+[17:26:34] [1_dense] step   2000 (2000/4000, 50%) | shard train_00010 | train 4.0937 | val 4.2519 | 327,961 tok/s | loader 0.3 ms/step | 3.3 min, ~3.3 min left
+[17:26:59] [1_dense] step   2250 (2250/4000, 56%) | shard train_00000 | train 4.0461 | val 4.2117 | 327,996 tok/s | loader 0.3 ms/step | 3.7 min, ~2.9 min left
+[17:27:24] [1_dense] step   2500 (2500/4000, 62%) | shard train_00000 | train 4.0153 | val 4.1752 | 327,974 tok/s | loader 0.3 ms/step | 4.2 min, ~2.5 min left
+[17:27:49] [1_dense] step   2750 (2750/4000, 69%) | shard train_00004 | train 3.9891 | val 4.1555 | 327,985 tok/s | loader 0.3 ms/step | 4.6 min, ~2.1 min left
+[17:28:14] [1_dense] step   3000 (3000/4000, 75%) | shard train_00004 | train 3.9498 | val 4.1317 | 327,926 tok/s | loader 0.3 ms/step | 5.0 min, ~1.7 min left
+[17:28:15] [1_dense] checkpoint at step 3000 (periodic): 270 MB in 1s
+[17:28:40] [1_dense] step   3250 (3250/4000, 81%) | shard train_00007 | train 3.9595 | val 4.1046 | 327,986 tok/s | loader 0.3 ms/step | 5.4 min, ~1.2 min left
+[17:29:05] [1_dense] step   3500 (3500/4000, 88%) | shard train_00007 | train 3.9195 | val 4.0850 | 327,999 tok/s | loader 0.3 ms/step | 5.8 min, ~0.8 min left
+[17:29:30] [1_dense] step   3750 (3750/4000, 94%) | shard train_00005 | train 3.9057 | val 4.0717 | 327,974 tok/s | loader 0.3 ms/step | 6.2 min, ~0.4 min left
+[17:29:55] [1_dense] step   4000 (4000/4000, 100%) | shard train_00005 | train 3.8832 | val 4.0554 | 327,946 tok/s | loader 0.4 ms/step | 6.7 min, ~0.0 min left
+[17:29:56] [1_dense] done: val 9.1012 -> 4.0554 in 6.7 min (resumed 0 time(s)); shards read: train_00002, train_00011, train_00003, train_00010, train_00000, train_00004, train_00007, train_00005
+[17:30:06] val loss, dense model at the end of phase 1:  4.0554
+[17:30:06] val loss, converted MoE before any training:  4.0639   (difference +0.0085, 2.0% of expert choices over capacity)
+[17:30:06] parameters: dense 22.2M -> MoE 71.8M total, 29.3M active per token
+[17:30:06] [2_moe] phase 2 MoE: 4000 steps from global step 4000; val loss at start 4.0639; planned 12.7 min
+[17:30:54] [2_moe] step   4250 (250/4000, 6%) | shard train_00014 | train 3.9310 | val 4.0507 | 172,678 tok/s | loader 0.3 ms/step | dropped 1.2% | 0.8 min, ~11.8 min left
+[17:31:41] [2_moe] step   4500 (500/4000, 12%) | shard train_00014 | train 3.8583 | val 4.0414 | 172,685 tok/s | loader 0.3 ms/step | dropped 1.1% | 1.6 min, ~11.0 min left
+[17:32:29] [2_moe] step   4750 (750/4000, 19%) | shard train_00012 | train 3.8574 | val 4.0178 | 172,679 tok/s | loader 0.3 ms/step | dropped 1.0% | 2.4 min, ~10.3 min left
+[17:33:17] [2_moe] step   5000 (1000/4000, 25%) | shard train_00012 | train 3.8374 | val 4.0061 | 172,682 tok/s | loader 0.3 ms/step | dropped 0.9% | 3.2 min, ~9.5 min left
+[17:34:04] [2_moe] step   5250 (1250/4000, 31%) | shard train_00006 | train 3.8245 | val 3.9942 | 172,684 tok/s | loader 0.3 ms/step | dropped 0.8% | 4.0 min, ~8.7 min left
+[17:34:52] [2_moe] step   5500 (1500/4000, 38%) | shard train_00006 | train 3.7819 | val 3.9768 | 172,686 tok/s | loader 0.3 ms/step | dropped 1.0% | 4.7 min, ~7.9 min left
+[17:35:14] [2_moe] checkpoint at step 5575 (periodic): 863 MB in 8s
+[17:35:47] [2_moe] step   5750 (1750/4000, 44%) | shard train_00009 | train 3.7923 | val 3.9584 | 172,679 tok/s | loader 0.3 ms/step | dropped 1.0% | 5.5 min, ~7.1 min left
+[17:36:35] [2_moe] step   6000 (2000/4000, 50%) | shard train_00009 | train 3.7701 | val 3.9497 | 172,684 tok/s | loader 0.3 ms/step | dropped 1.1% | 6.3 min, ~6.3 min left
+[17:37:23] [2_moe] step   6250 (2250/4000, 56%) | shard train_00013 | train 3.7643 | val 3.9356 | 172,676 tok/s | loader 0.3 ms/step | dropped 1.1% | 7.1 min, ~5.5 min left
+[17:38:10] [2_moe] step   6500 (2500/4000, 62%) | shard train_00013 | train 3.7510 | val 3.9232 | 172,677 tok/s | loader 0.3 ms/step | dropped 1.2% | 7.9 min, ~4.7 min left
+[17:38:58] [2_moe] step   6750 (2750/4000, 69%) | shard train_00008 | train 3.7537 | val 3.9157 | 172,684 tok/s | loader 0.3 ms/step | dropped 1.3% | 8.7 min, ~4.0 min left
+[17:39:45] [2_moe] step   7000 (3000/4000, 75%) | shard train_00008 | train 3.7150 | val 3.8977 | 172,671 tok/s | loader 0.3 ms/step | dropped 1.5% | 9.5 min, ~3.2 min left
+[17:40:16] [2_moe] checkpoint at step 7150 (periodic): 865 MB in 2s
+[17:40:35] [2_moe] step   7250 (3250/4000, 81%) | shard train_00001 | train 3.7400 | val 3.8603 | 172,680 tok/s | loader 0.3 ms/step | dropped 1.3% | 10.3 min, ~2.4 min left
+[17:41:32] [2_moe] step   7500 (3500/4000, 88%) | shard train_00001 | train 3.6651 | val 3.8065 | 172,683 tok/s | loader 0.3 ms/step | dropped 1.4% | 11.1 min, ~1.6 min left
+[17:42:19] [2_moe] step   7750 (3750/4000, 94%) | shard train_00015 | train 3.6289 | val 3.7657 | 172,686 tok/s | loader 0.3 ms/step | dropped 1.4% | 11.9 min, ~0.8 min left
+[17:43:07] [2_moe] step   8000 (4000/4000, 100%) | shard train_00015 | train 3.6011 | val 3.7440 | 172,689 tok/s | loader 0.3 ms/step | dropped 1.4% | 12.6 min, ~0.0 min left
+[17:43:08] [2_moe] done: val 4.0639 -> 3.7440 in 12.6 min (resumed 0 time(s)); shards read: train_00005, train_00014, train_00012, train_00006, train_00009, train_00013, train_00008, train_00001, train_00015
+[17:43:08] [3_dense_control] phase 2 dense control: 4000 steps from global step 4000; val loss at start 4.0554; planned 6.7 min
+[17:43:34] [3_dense_control] step   4250 (250/4000, 6%) | shard train_00014 | train 3.9204 | val 4.0400 | 327,981 tok/s | loader 0.3 ms/step | 0.4 min, ~6.2 min left
+[17:43:59] [3_dense_control] step   4500 (500/4000, 12%) | shard train_00014 | train 3.8531 | val 4.0342 | 328,009 tok/s | loader 0.3 ms/step | 0.8 min, ~5.8 min left
+[17:44:24] [3_dense_control] step   4750 (750/4000, 19%) | shard train_00012 | train 3.8576 | val 4.0161 | 327,977 tok/s | loader 0.3 ms/step | 1.2 min, ~5.4 min left
+[17:44:49] [3_dense_control] step   5000 (1000/4000, 25%) | shard train_00012 | train 3.8432 | val 4.0118 | 327,986 tok/s | loader 0.3 ms/step | 1.7 min, ~5.0 min left
+[17:45:14] [3_dense_control] step   5250 (1250/4000, 31%) | shard train_00006 | train 3.8357 | val 4.0025 | 327,997 tok/s | loader 0.3 ms/step | 2.1 min, ~4.6 min left
+[17:45:39] [3_dense_control] step   5500 (1500/4000, 38%) | shard train_00006 | train 3.7999 | val 3.9914 | 327,969 tok/s | loader 0.3 ms/step | 2.5 min, ~4.2 min left
+[17:46:04] [3_dense_control] step   5750 (1750/4000, 44%) | shard train_00009 | train 3.8123 | val 3.9778 | 327,980 tok/s | loader 0.3 ms/step | 2.9 min, ~3.7 min left
+[17:46:29] [3_dense_control] step   6000 (2000/4000, 50%) | shard train_00009 | train 3.7980 | val 3.9763 | 327,999 tok/s | loader 0.3 ms/step | 3.3 min, ~3.3 min left
+[17:46:54] [3_dense_control] step   6250 (2250/4000, 56%) | shard train_00013 | train 3.7939 | val 3.9639 | 327,977 tok/s | loader 0.3 ms/step | 3.7 min, ~2.9 min left
+[17:47:20] [3_dense_control] step   6500 (2500/4000, 62%) | shard train_00013 | train 3.7845 | val 3.9552 | 327,996 tok/s | loader 0.3 ms/step | 4.2 min, ~2.5 min left
+[17:47:45] [3_dense_control] step   6750 (2750/4000, 69%) | shard train_00008 | train 3.7898 | val 3.9525 | 328,012 tok/s | loader 0.3 ms/step | 4.6 min, ~2.1 min left
+[17:48:10] [3_dense_control] step   7000 (3000/4000, 75%) | shard train_00008 | train 3.7578 | val 3.9387 | 327,951 tok/s | loader 0.3 ms/step | 5.0 min, ~1.7 min left
+[17:48:10] [3_dense_control] checkpoint at step 7000 (periodic): 270 MB in 0s
+[17:48:35] [3_dense_control] step   7250 (3250/4000, 81%) | shard train_00001 | train 3.7840 | val 3.9025 | 327,906 tok/s | loader 0.3 ms/step | 5.4 min, ~1.2 min left
+[17:49:00] [3_dense_control] step   7500 (3500/4000, 88%) | shard train_00001 | train 3.7140 | val 3.8521 | 328,005 tok/s | loader 0.3 ms/step | 5.8 min, ~0.8 min left
+[17:49:26] [3_dense_control] step   7750 (3750/4000, 94%) | shard train_00015 | train 3.6791 | val 3.8170 | 328,006 tok/s | loader 0.3 ms/step | 6.2 min, ~0.4 min left
+[17:49:51] [3_dense_control] step   8000 (4000/4000, 100%) | shard train_00015 | train 3.6529 | val 3.7960 | 327,999 tok/s | loader 0.3 ms/step | 6.7 min, ~0.0 min left
+[17:49:51] [3_dense_control] done: val 4.0554 -> 3.7960 in 6.7 min (resumed 0 time(s)); shards read: train_00005, train_00014, train_00012, train_00006, train_00009, train_00013, train_00008, train_00001, train_00015
+[17:49:51] run                        params   active  steps  tokens  val start  val end     tok/s  minutes
+[17:49:51] phase 1: dense              22.2M    22.2M   4000    131M     9.1012   4.0554   327,978      6.7
+[17:49:51] phase 2: MoE                71.8M    29.3M   4000    131M     4.0639   3.7440   172,684     12.6
+[17:49:51] phase 2: dense control      22.2M    22.2M   4000    131M     4.0554   3.7960   327,984      6.7
+[17:49:51] - The conversion was seamless. Held-out loss 4.0554 for the dense model and 4.0639 for the MoE made from it, before any MoE training (difference +0.0085).
+[17:49:51] - The MoE kept training and kept reducing the loss: 4.0639 → 3.7440 over 4,000 steps; still falling in the second half of the run (+0.2057).
+[17:49:51] - Against the dense control (same start, same tokens, same schedule): MoE 3.7440 vs dense 3.7960, the MoE is 0.0520 lower.
+[17:49:51] - Cost: MoE 172,684 tok/s vs dense 327,984 tok/s (53% of the dense speed), with 29.3M active of 71.8M parameters vs dense 22.2M. To reach the control's final loss (3.7960) the MoE needed 11.9 min of training, against the control's 6.7 min (slower at equal wall-clock).
+[17:49:51] - Experts stayed healthy: over the last 20% of training the busiest expert took 1.01x its fair share, the quietest 1.00x; 0 of 64 experts were dead (< 10% of fair share); 1.42% of expert choices were over capacity.
+[17:49:52] 1_dense: 8 shards
+[17:49:52]   shard                    steps  device     tokens  mean loss     ppl
+[17:49:52]   train_00002         0 – 511     TPU_0       16.8M     5.6612   287.5
+[17:49:52]   train_00011       512 – 1023    TPU_0       16.8M     4.6498   104.6
+[17:49:52]   train_00003      1024 – 1535    TPU_0       16.8M     4.2919    73.1
+[17:49:52]   train_00010      1536 – 2047    TPU_0       16.8M     4.1400    62.8
+[17:49:52]   train_00000      2048 – 2559    TPU_0       16.8M     4.0465    57.2
+[17:49:52]   train_00004      2560 – 3071    TPU_0       16.8M     3.9792    53.5
+[17:49:52]   train_00007      3072 – 3583    TPU_0       16.8M     3.9553    52.2
+[17:49:52]   train_00005      3584 – 3999    TPU_0       13.6M     3.9072    49.8
+[17:49:52] 2_moe: 9 shards
+[17:49:52]   shard                    steps  device     tokens  mean loss     ppl
+[17:49:52]   train_00005      4000 – 4095    TPU_0        3.1M     3.8671    47.8
+[17:49:52]   train_00014      4096 – 4607    TPU_0       16.8M     3.8897    48.9
+[17:49:52]   train_00012      4608 – 5119    TPU_0       16.8M     3.8560    47.3
+[17:49:52]   train_00006      5120 – 5631    TPU_0       16.8M     3.8079    45.1
+[17:49:52]   train_00009      5632 – 6143    TPU_0       16.8M     3.7773    43.7
+[17:49:52]   train_00013      6144 – 6655    TPU_0       16.8M     3.7595    42.9
+[17:49:52]   train_00008      6656 – 7167    TPU_0       16.8M     3.7360    41.9
+[17:49:52]   train_00001      7168 – 7679    TPU_0       16.8M     3.6751    39.5
+[17:49:52]   train_00015      7680 – 7999    TPU_0       10.5M     3.6124    37.1
+[17:49:52] 3_dense_control: 9 shards
+[17:49:52]   shard                    steps  device     tokens  mean loss     ppl
+[17:49:52]   train_00005      4000 – 4095    TPU_0        3.1M     3.8748    48.2
+[17:49:52]   train_00014      4096 – 4607    TPU_0       16.8M     3.8817    48.5
+[17:49:52]   train_00012      4608 – 5119    TPU_0       16.8M     3.8590    47.4
+[17:49:52]   train_00006      5120 – 5631    TPU_0       16.8M     3.8224    45.7
+[17:49:52]   train_00009      5632 – 6143    TPU_0       16.8M     3.8019    44.8
+[17:49:52]   train_00013      6144 – 6655    TPU_0       16.8M     3.7922    44.4
+[17:49:52]   train_00008      6656 – 7167    TPU_0       16.8M     3.7758    43.6
+[17:49:52]   train_00001      7168 – 7679    TPU_0       16.8M     3.7231    41.4
+[17:49:52]   train_00015      7680 – 7999    TPU_0       10.5M     3.6632    39.0
+[17:49:52] 2_moe @ step 6000: phase 2 MoE | shard train_00009 | lr 1.00e-03 | loss 3.7109 (perplexity 40.89) | grad norm 0.324
+[17:49:52]   TPU_0: batch rows 0–63 = sequences [21460, 15162, 31629, 18873, 6720]… of train_00009
+[17:49:52]   hardest sequence #24572 (loss 4.363) comes from 1 document(s):
+[17:49:52]       http://www.zoominfo.com/p/Jon-Launer/-2124006576   (FineWeb <urn:uuid:8a40114c-b0ce-4db1-b0a3-44a929048d5f>, CC-MAIN-2015-14)
+[17:49:52]   easiest sequence #18220 (loss 2.890) comes from 1 document(s):
+[17:49:52]       http://voer.edu.vn/c/limits-of-resolution-the-rayleigh-criterion/0e60bfc6/c2cc71e2   (FineWeb <urn:uuid:ca5cc235-3e1a-4ac2-bd48-f9edc4fd6d54>, CC-MAIN-2018-34)
+[17:49:52]   replay: re-reading step 6000 from train_00009 gives the recorded batch: yes
+[17:49:52] 3_dense_control @ step 6000: phase 2 dense control | shard train_00009 | lr 1.00e-03 | loss 3.7355 (perplexity 41.91) | grad norm 0.3384
+[17:49:52]   TPU_0: batch rows 0–63 = sequences [21460, 15162, 31629, 18873, 6720]… of train_00009
+[17:49:52]   hardest sequence #24572 (loss 4.392) comes from 1 document(s):
+[17:49:52]       http://www.zoominfo.com/p/Jon-Launer/-2124006576   (FineWeb <urn:uuid:8a40114c-b0ce-4db1-b0a3-44a929048d5f>, CC-MAIN-2015-14)
+[17:49:52]   easiest sequence #18220 (loss 2.881) comes from 1 document(s):
+[17:49:52]       http://voer.edu.vn/c/limits-of-resolution-the-rayleigh-criterion/0e60bfc6/c2cc71e2   (FineWeb <urn:uuid:ca5cc235-3e1a-4ac2-bd48-f9edc4fd6d54>, CC-MAIN-2018-34)
+[17:49:52]   replay: re-reading step 6000 from train_00009 gives the recorded batch: yes
+[17:49:52] MoE and dense control at step 6000: same shard and sequences: yes; loss 3.7109 vs 3.7355
+[17:50:01] --- dense, end of phase 1 ---
+The best way to learn a new language is to learn a new language.
+“What do students do in the sport?” “Much as learning. You’re trying to learn a new language.”
+Final language, as it means: “What is the language?”
+Set on things like: “Met all of the classes are used to differentiate their learning.”
+Final language: “Much of the language, language, language, and social, ethnic, and culture.”
+Set on things like: “Much of the language,” “Michael, a language, or, is the language? How much can the language be used? Why is the word language be used?”
+Set on things like: “Much is
+
+[17:50:02] --- dense control ---
+The best way to learn a new language is to learn to learn with your hands. You can learn how to use it and use it to understand other language and language.
+How to Use A Word?
+A Word is an English language language language languages. For example, you can use it as a language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language language
+
+[17:50:18] --- MoE ---
+The best way to learn a new language is to learn to use the word 'School Cards' (think 'School Cards') and 'Glass Grotts' (think 'School Cards') and 'Glass Grotts' (think 'School Cards')
+- Credit/billing documents (money)
+- Receive anonymous email list
+- Receive a confirmation email
+- Purchase a copy of the letter via email
+- Purchase a copy of the letter via email
+- Receive anonymous email
+- Receive a confirmation email
+- Inform the password
+- Receive a valid email
+
+[17:50:18] --- dense, end of phase 1 ---
+The city council voted on Tuesday to give it to the county.
+“This is where our public has put together a little help as well. We’re trying to make a big impact,” said David Sicherland, who said.
+The council’s legislative council said last Thursday. “We’re putting together some of the best judicial changes to keep the public off.”
+“Our public has been very close to the state. It’s going to be a big part of the state.”
+- Public prostitution has now changed since it was filed last year, according to the city’s legislative council on Tuesday. The county has been making some sense of what the city has on the right to limit the state’s defiant to
+
+[17:50:18] --- dense control ---
+The city council voted on Tuesday to give it a vote with the city council.
+“We look forward to looking at the city as well. We’re trying to make a big impact this year,” said council council spokeswoman Rohi Kawal, who also said he should “boost up all of the projects and improve the City’s budget,” the council said. “These projects are expected to happen. The city has the ability to work with government, so we’re looking at the state’s budgetary. The city has the ability to improve its budgets.”
+Both council members who are working on the council board will be willing to pay for the City Council’s budget.
+“The City Council’s budget includes a
+
+[17:50:18] --- MoE ---
+The city council voted on Tuesday to give a formal vote with the city council to do so.
+Former Governor Dillo Moore was appointed to a committee by the Pope of the U.S. Department of Justice.
+Moore also spoke on an important issue during the meeting, but he also spoke on the issues and is pleased that the meeting would also address the need for this new project.
+The commission also welcomes the council to discuss the issues.
+“The town council is trying to get a lot of work on the issues and it will be very difficult for the community to take advantage of the local council,” said Aaron Molombo, the commission’s secretary.
+Moore said he is
+

@@ -1,0 +1,278 @@
+{
+ "sessions": [
+  {
+   "started": "2026-09-29 17:19:34",
+   "device": "TPU v5 lite",
+   "jax": "0.7.2"
+  }
+ ],
+ "fingerprint": {
+  "data": "fineweb/sample-10BT",
+  "seq": 512,
+  "vocab": 8192,
+  "d": 384,
+  "layers": 8,
+  "heads": 6,
+  "ffn": 1536,
+  "experts": 8,
+  "top_k": 2,
+  "capacity_factor": 1.25,
+  "group": 1024,
+  "lr": 0.001,
+  "seed": 0,
+  "shard_seqs": 32768
+ },
+ "plan": {
+  "batch": 64,
+  "steps": 4000,
+  "t_dense": 0.09994092000001728,
+  "t_moe": 0.18981955469998865,
+  "device": "TPU v5 lite",
+  "created": "2026-09-29 17:20",
+  "budget_min": 40,
+  "fingerprint": {
+   "data": "fineweb/sample-10BT",
+   "seq": 512,
+   "vocab": 8192,
+   "d": 384,
+   "layers": 8,
+   "heads": 6,
+   "ffn": 1536,
+   "experts": 8,
+   "top_k": 2,
+   "capacity_factor": 1.25,
+   "group": 1024,
+   "lr": 0.001,
+   "seed": 0,
+   "shard_seqs": 32768
+  },
+  "t_dense_fp32": 0.1181210727999769
+ },
+ "schedule": {
+  "peak_lr": 0.001,
+  "warmup": 100,
+  "decay_start": 6800,
+  "total": 8000,
+  "final_frac": 0.1,
+  "moe_start": 4000,
+  "gamma_switch": 1000
+ },
+ "seed": 0,
+ "rng": "model init PRNGKey(0); router noise PRNGKey(0) folded with the global step; shard order and in-shard shuffles numpy default_rng seeded with 0 (and the shard number)",
+ "data": {
+  "pipeline_sha256": "d0876088e642024282db4056df4e926d43a8cdc50d3c0fdc38007f80fcdc884d",
+  "tokenizer_sha256": "48eb678884e4378351f66f2208ad59e7f97f5b2dabf8cee009dbddb3611e7fa7",
+  "shard_order": [
+   "train_00002",
+   "train_00011",
+   "train_00003",
+   "train_00010",
+   "train_00000",
+   "train_00004",
+   "train_00007",
+   "train_00005",
+   "train_00014",
+   "train_00012",
+   "train_00006",
+   "train_00009",
+   "train_00013",
+   "train_00008",
+   "train_00001",
+   "train_00015"
+  ],
+  "steps_per_shard": 512,
+  "validation_shard": "val_00000"
+ },
+ "devices": [
+  {
+   "id": 0,
+   "name": "TPU_0",
+   "kind": "TPU v5 lite",
+   "coords": [
+    0,
+    0,
+    0
+   ],
+   "process": 0
+  }
+ ],
+ "mesh": {
+  "axes": [
+   "data"
+  ],
+  "shape": {
+   "data": 1
+  }
+ },
+ "placement": [
+  {
+   "device": "TPU_0",
+   "kind": "TPU v5 lite",
+   "rows": [
+    0,
+    64
+   ]
+  }
+ ],
+ "shard_schedule": [
+  {
+   "steps": [
+    0,
+    511
+   ],
+   "shard": "train_00002",
+   "phase": "phase 1 (dense)"
+  },
+  {
+   "steps": [
+    512,
+    1023
+   ],
+   "shard": "train_00011",
+   "phase": "phase 1 (dense)"
+  },
+  {
+   "steps": [
+    1024,
+    1535
+   ],
+   "shard": "train_00003",
+   "phase": "phase 1 (dense)"
+  },
+  {
+   "steps": [
+    1536,
+    2047
+   ],
+   "shard": "train_00010",
+   "phase": "phase 1 (dense)"
+  },
+  {
+   "steps": [
+    2048,
+    2559
+   ],
+   "shard": "train_00000",
+   "phase": "phase 1 (dense)"
+  },
+  {
+   "steps": [
+    2560,
+    3071
+   ],
+   "shard": "train_00004",
+   "phase": "phase 1 (dense)"
+  },
+  {
+   "steps": [
+    3072,
+    3583
+   ],
+   "shard": "train_00007",
+   "phase": "phase 1 (dense)"
+  },
+  {
+   "steps": [
+    3584,
+    4095
+   ],
+   "shard": "train_00005",
+   "phase": "phase 1 \u2192 phase 2"
+  },
+  {
+   "steps": [
+    4096,
+    4607
+   ],
+   "shard": "train_00014",
+   "phase": "phase 2 (MoE and control)"
+  },
+  {
+   "steps": [
+    4608,
+    5119
+   ],
+   "shard": "train_00012",
+   "phase": "phase 2 (MoE and control)"
+  },
+  {
+   "steps": [
+    5120,
+    5631
+   ],
+   "shard": "train_00006",
+   "phase": "phase 2 (MoE and control)"
+  },
+  {
+   "steps": [
+    5632,
+    6143
+   ],
+   "shard": "train_00009",
+   "phase": "phase 2 (MoE and control)"
+  },
+  {
+   "steps": [
+    6144,
+    6655
+   ],
+   "shard": "train_00013",
+   "phase": "phase 2 (MoE and control)"
+  },
+  {
+   "steps": [
+    6656,
+    7167
+   ],
+   "shard": "train_00008",
+   "phase": "phase 2 (MoE and control)"
+  },
+  {
+   "steps": [
+    7168,
+    7679
+   ],
+   "shard": "train_00001",
+   "phase": "phase 2 (MoE and control)"
+  },
+  {
+   "steps": [
+    7680,
+    7999
+   ],
+   "shard": "train_00015",
+   "phase": "phase 2 (MoE and control)"
+  }
+ ],
+ "runs": {
+  "1_dense": {
+   "global_steps": [
+    0,
+    3999
+   ],
+   "model": "dense"
+  },
+  "2_moe": {
+   "global_steps": [
+    4000,
+    7999
+   ],
+   "model": "MoE converted from 1_dense at step 4000"
+  },
+  "3_dense_control": {
+   "global_steps": [
+    4000,
+    7999
+   ],
+   "model": "dense, continued from 1_dense"
+  }
+ },
+ "checkpoint_contents": [
+  "weights",
+  "AdamW moments and step count (so the schedule continues)",
+  "router biases (MoE)",
+  "loss curves",
+  "this run's ledger lines",
+  "the data position (derived from the global step)"
+ ]
+}

@@ -1,0 +1,30 @@
+{
+ "name": "3_dense_control",
+ "phase": "phase 2 dense control",
+ "moe": false,
+ "steps": 4000,
+ "planned_steps": 4000,
+ "tokens": 131072000,
+ "first_global_step": 4000,
+ "val_start": 4.055449724197388,
+ "val_end": 3.795992374420166,
+ "train_end": 3.653606593608856,
+ "train_min": 6.65890068619999,
+ "tok_s": 327984.0821109344,
+ "loader_ms": 0.29271220003465714,
+ "compile_s": 0.10144138999976349,
+ "resumes": [],
+ "shards_read": [
+  "train_00005",
+  "train_00014",
+  "train_00012",
+  "train_00006",
+  "train_00009",
+  "train_00013",
+  "train_00008",
+  "train_00001",
+  "train_00015"
+ ],
+ "params": 22223232,
+ "active_params": 22223232
+}

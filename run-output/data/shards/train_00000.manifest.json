@@ -1,0 +1,60 @@
+{
+ "shard_id": "train_00000",
+ "split": "train",
+ "parent_shard_id": null,
+ "n_tokens": 16777217,
+ "n_sequences": 32768,
+ "seq_len": 512,
+ "dtype": "uint16 token ids",
+ "token_sha256": "26aa059fb46f5e6566668e7af1b250ac52d458b49f68e61c42451c8fcc6b72a5",
+ "text_sha256": "d01bd32d0e80c4a326cf2cbaf1fc977def6de748c8b508672fce97c9e0418d03",
+ "n_docs": 20227,
+ "docs_index": "train_00000.docs.jsonl.gz",
+ "first_doc_continues_from_previous_shard": false,
+ "provenance": {
+  "dataset": "HuggingFaceFW/fineweb",
+  "config": "sample-10BT",
+  "split": "train",
+  "stream_rows": [
+   0,
+   20231
+  ],
+  "common_crawl_dumps": {
+   "CC-MAIN-2013-20": 2680,
+   "CC-MAIN-2015-14": 2765,
+   "CC-MAIN-2016-30": 2472,
+   "CC-MAIN-2017-34": 2889,
+   "CC-MAIN-2018-34": 1897,
+   "CC-MAIN-2019-35": 2276,
+   "CC-MAIN-2020-45": 2228,
+   "CC-MAIN-2022-21": 3020
+  }
+ },
+ "cleaning": {
+  "upstream": "FineWeb's own pipeline (see its dataset card): URL filtering, text extraction, English language ID, quality and repetition filters, MinHash deduplication within each Common Crawl dump, PII anonymisation",
+  "here": "rows shorter than 200 characters dropped",
+  "rows_dropped": 5
+ },
+ "dedup": "FineWeb MinHash within each dump; not re-checked across dumps here",
+ "contamination": "not checked against evaluation benchmarks",
+ "eval_overlap": "none: training shard",
+ "language": {
+  "code": "en",
+  "mean_fineweb_language_score": 0.928
+ },
+ "lane": "general English web text",
+ "tokenizer": {
+  "file": "tokenizer.json",
+  "sha256": "48eb678884e4378351f66f2208ad59e7f97f5b2dabf8cee009dbddb3611e7fa7",
+  "vocab": 8192,
+  "eos": "<|endoftext|>"
+ },
+ "packing": "documents concatenated with EOS between them, no padding; windows of seq_len + 1 tokens at stride seq_len (100% of tokens are real text)",
+ "pipeline_sha256": "d0876088e642024282db4056df4e926d43a8cdc50d3c0fdc38007f80fcdc884d",
+ "next": {
+  "row": 20231,
+  "token_offset": 1063
+ },
+ "created": "2026-09-29 17:20:46",
+ "build_seconds": 10.2
+}

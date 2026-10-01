@@ -1,0 +1,171 @@
+{
+ "pipeline": {
+  "dataset": "HuggingFaceFW/fineweb",
+  "config": "sample-10BT",
+  "split": "train",
+  "min_doc_chars": 200,
+  "tokenizer": "byte-level BPE, 8192 tokens, first 80 MB",
+  "eos": "<|endoftext|>",
+  "seq_len": 512,
+  "shard_seqs": 32768,
+  "val_seqs": 128,
+  "packing": "documents concatenated with EOS between them, no padding; windows of seq_len + 1 tokens at stride seq_len (100% of tokens are real text)"
+ },
+ "pipeline_sha256": "d0876088e642024282db4056df4e926d43a8cdc50d3c0fdc38007f80fcdc884d",
+ "tokenizer_sha256": "48eb678884e4378351f66f2208ad59e7f97f5b2dabf8cee009dbddb3611e7fa7",
+ "shards": [
+  {
+   "shard_id": "train_00000",
+   "split": "train",
+   "n_tokens": 16777217,
+   "n_sequences": 32768,
+   "n_docs": 20227,
+   "token_sha256": "26aa059fb46f5e6566668e7af1b250ac52d458b49f68e61c42451c8fcc6b72a5",
+   "text_sha256": "d01bd32d0e80c4a326cf2cbaf1fc977def6de748c8b508672fce97c9e0418d03"
+  },
+  {
+   "shard_id": "train_00001",
+   "split": "train",
+   "n_tokens": 16777217,
+   "n_sequences": 32768,
+   "n_docs": 20294,
+   "token_sha256": "ad0ded0ca53006daae5ab8175cb8cd05fa2841abdd1da96d85848793585772ee",
+   "text_sha256": "362f4fba08f4b478263888c8128d791ffb79620b70295850d8d7c64eedec4cc7"
+  },
+  {
+   "shard_id": "train_00002",
+   "split": "train",
+   "n_tokens": 16777217,
+   "n_sequences": 32768,
+   "n_docs": 20272,
+   "token_sha256": "75d34f61c95eb1b4c668405294200d93c60a803f31c171f2e473f508f613e20a",
+   "text_sha256": "0dcea254dde82fecc5a5bd4f0d0c683d0563f91ee60b7f556918cba018d954d3"
+  },
+  {
+   "shard_id": "train_00003",
+   "split": "train",
+   "n_tokens": 16777217,
+   "n_sequences": 32768,
+   "n_docs": 20823,
+   "token_sha256": "5a917449f503def04897e7f1b255cea580580306f832e3d74e325ebbe6e1d1f9",
+   "text_sha256": "b496691712305ba382c68921c38abfc29d34591d6ccb873297043d1d617c1eea"
+  },
+  {
+   "shard_id": "train_00004",
+   "split": "train",
+   "n_tokens": 16777217,
+   "n_sequences": 32768,
+   "n_docs": 20031,
+   "token_sha256": "4d524790c353af75c9f40b4b35990619cce46d511d2febbdfc72d78ca3c6f6e2",
+   "text_sha256": "d8a24c781effc623b6bc1cce22a08655a1ccba4ddd9893dbdbb051cadba541a5"
+  },
+  {
+   "shard_id": "train_00005",
+   "split": "train",
+   "n_tokens": 16777217,
+   "n_sequences": 32768,
+   "n_docs": 20392,
+   "token_sha256": "6cf16daaa6cbf5b82aa3037a95a56107da8cb36f3ca70a8f7bf5523210571234",
+   "text_sha256": "bb8926a2b6bb1494c583f0946121600b5d60bade101c36f159327a3fae12cd83"
+  },
+  {
+   "shard_id": "train_00006",
+   "split": "train",
+   "n_tokens": 16777217,
+   "n_sequences": 32768,
+   "n_docs": 20419,
+   "token_sha256": "bb1075c9fff4ddc50a20e937d96f88e998085493154a48a352ef90f1e2aa1da3",
+   "text_sha256": "5efb9a3db6440c7a66ff05669b270415f88cf793501f68b8bc2325a7d6a59b97"
+  },
+  {
+   "shard_id": "train_00007",
+   "split": "train",
+   "n_tokens": 16777217,
+   "n_sequences": 32768,
+   "n_docs": 20423,
+   "token_sha256": "57e3145a620a07f1c64bd9b27f986ac50703885e2bb92c482585a2730638709a",
+   "text_sha256": "d093cd254140c8d1228527945493fe322ff6b62526147a24198a5ead94ee9246"
+  },
+  {
+   "shard_id": "train_00008",
+   "split": "train",
+   "n_tokens": 16777217,
+   "n_sequences": 32768,
+   "n_docs": 20605,
+   "token_sha256": "1b3243ff957e61bd80dae7cc125f61e399e0e42b17590c090c65b807c43bf677",
+   "text_sha256": "5ee2cb667fc5aad49ff1e5edae55f62df419df564a59aaa1c6e7671f1507f46f"
+  },
+  {
+   "shard_id": "train_00009",
+   "split": "train",
+   "n_tokens": 16777217,
+   "n_sequences": 32768,
+   "n_docs": 20129,
+   "token_sha256": "4959550dc2686e27e6ffc81bf524eedd738e00bf1537d4fc8b619b452c2c0732",
+   "text_sha256": "2818ed9e506aa1c081a1241615a4d5f60e1bfab3a5375487650ff373741549c2"
+  },
+  {
+   "shard_id": "train_00010",
+   "split": "train",
+   "n_tokens": 16777217,
+   "n_sequences": 32768,
+   "n_docs": 20411,
+   "token_sha256": "e4881e1dd5ae7a257d334ed95c50dfbd94375816e92f1ba9886578654ea3b42e",
+   "text_sha256": "cbeb4a67a976f862334641e27b84b8c78f0d1a9cd28a3c33a1212f31abe9f0ed"
+  },
+  {
+   "shard_id": "train_00011",
+   "split": "train",
+   "n_tokens": 16777217,
+   "n_sequences": 32768,
+   "n_docs": 21014,
+   "token_sha256": "cc8570b70d6ccb4f6a442654fba6fd86d3d2a6dfecfde2bfdae08438936e3793",
+   "text_sha256": "966907eea3a97546156462a891c476957d8236a78235c0316b2bdfdc532aa8a9"
+  },
+  {
+   "shard_id": "train_00012",
+   "split": "train",
+   "n_tokens": 16777217,
+   "n_sequences": 32768,
+   "n_docs": 20490,
+   "token_sha256": "1d625b1f9b3681235c741982ec232479d1ea4d1d0ebb3546d75c715d14063d26",
+   "text_sha256": "76efbfa4df74714270e2e3e0f41f5a98ca1fbed96689572e5f7c80983c83cbd0"
+  },
+  {
+   "shard_id": "train_00013",
+   "split": "train",
+   "n_tokens": 16777217,
+   "n_sequences": 32768,
+   "n_docs": 20746,
+   "token_sha256": "240394eb35873b429624af72a8ffaa1263a474a151ac81b0ed2f007147c57235",
+   "text_sha256": "b4e94f6c6ec9e9b0e7d245d29fda29a6296860ddd93399d1d65a0e8b3f443294"
+  },
+  {
+   "shard_id": "train_00014",
+   "split": "train",
+   "n_tokens": 16777217,
+   "n_sequences": 32768,
+   "n_docs": 20537,
+   "token_sha256": "7b2387655374f6e2cbd282069d7ace1e675dad02451cac1901cfa6af28f7b98d",
+   "text_sha256": "3acd22b4d5ed7001936ba0438035d43f85a3258f5b873fb2eb355622f9c83367"
+  },
+  {
+   "shard_id": "train_00015",
+   "split": "train",
+   "n_tokens": 16777217,
+   "n_sequences": 32768,
+   "n_docs": 20557,
+   "token_sha256": "c9aa8705fe64c146f2ba6dfffe7b6e5ae73ac219c8a43e9a45ed97d1571b9cce",
+   "text_sha256": "86e9558aa811b0713cff7226df7927c50b36a40086fabfeaa4c1d910a3a53e27"
+  },
+  {
+   "shard_id": "val_00000",
+   "split": "validation",
+   "n_tokens": 65537,
+   "n_sequences": 128,
+   "n_docs": 79,
+   "token_sha256": "1911768032a1dce205c91fe24f920cf07ebe910fd7583504d78cc2972655c3df",
+   "text_sha256": "7d10a66fcfebc02a2ec01bdc65d6c29b50b7e5a8c9766f5efaf5a4ae77665f28"
+  }
+ ]
+}

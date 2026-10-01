@@ -1,0 +1,30 @@
+{
+ "name": "2_moe",
+ "phase": "phase 2 MoE",
+ "moe": true,
+ "steps": 4000,
+ "planned_steps": 4000,
+ "tokens": 131072000,
+ "first_global_step": 4000,
+ "val_start": 4.063905239105225,
+ "val_end": 3.744009256362915,
+ "train_end": 3.6021861732006073,
+ "train_min": 12.647413773150038,
+ "tok_s": 172683.56436166383,
+ "loader_ms": 0.3026602399768308,
+ "compile_s": 0.19147956699998758,
+ "resumes": [],
+ "shards_read": [
+  "train_00005",
+  "train_00014",
+  "train_00012",
+  "train_00006",
+  "train_00009",
+  "train_00013",
+  "train_00008",
+  "train_00001",
+  "train_00015"
+ ],
+ "params": 71793024,
+ "active_params": 29325696
+}

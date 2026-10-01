@@ -1,0 +1,28 @@
+{"time": "2026-09-29 17:19:36", "event": "session_start", "jax": "0.7.2", "backend": "tpu", "devices": ["TPU_0(process=0,(0,0,0,0))"]}
+{"time": "2026-09-29 17:20:46", "event": "shard_written", "shard": "train_00000", "tokens": 16777217, "docs": 20227, "sha256": "26aa059fb46f5e6566668e7af1b250ac52d458b49f68e61c42451c8fcc6b72a5"}
+{"time": "2026-09-29 17:20:55", "event": "shard_written", "shard": "train_00001", "tokens": 16777217, "docs": 20294, "sha256": "ad0ded0ca53006daae5ab8175cb8cd05fa2841abdd1da96d85848793585772ee"}
+{"time": "2026-09-29 17:21:04", "event": "shard_written", "shard": "train_00002", "tokens": 16777217, "docs": 20272, "sha256": "75d34f61c95eb1b4c668405294200d93c60a803f31c171f2e473f508f613e20a"}
+{"time": "2026-09-29 17:21:14", "event": "shard_written", "shard": "train_00003", "tokens": 16777217, "docs": 20823, "sha256": "5a917449f503def04897e7f1b255cea580580306f832e3d74e325ebbe6e1d1f9"}
+{"time": "2026-09-29 17:21:24", "event": "shard_written", "shard": "train_00004", "tokens": 16777217, "docs": 20031, "sha256": "4d524790c353af75c9f40b4b35990619cce46d511d2febbdfc72d78ca3c6f6e2"}
+{"time": "2026-09-29 17:21:34", "event": "shard_written", "shard": "train_00005", "tokens": 16777217, "docs": 20392, "sha256": "6cf16daaa6cbf5b82aa3037a95a56107da8cb36f3ca70a8f7bf5523210571234"}
+{"time": "2026-09-29 17:21:43", "event": "shard_written", "shard": "train_00006", "tokens": 16777217, "docs": 20419, "sha256": "bb1075c9fff4ddc50a20e937d96f88e998085493154a48a352ef90f1e2aa1da3"}
+{"time": "2026-09-29 17:21:53", "event": "shard_written", "shard": "train_00007", "tokens": 16777217, "docs": 20423, "sha256": "57e3145a620a07f1c64bd9b27f986ac50703885e2bb92c482585a2730638709a"}
+{"time": "2026-09-29 17:22:03", "event": "shard_written", "shard": "train_00008", "tokens": 16777217, "docs": 20605, "sha256": "1b3243ff957e61bd80dae7cc125f61e399e0e42b17590c090c65b807c43bf677"}
+{"time": "2026-09-29 17:22:13", "event": "shard_written", "shard": "train_00009", "tokens": 16777217, "docs": 20129, "sha256": "4959550dc2686e27e6ffc81bf524eedd738e00bf1537d4fc8b619b452c2c0732"}
+{"time": "2026-09-29 17:22:23", "event": "shard_written", "shard": "train_00010", "tokens": 16777217, "docs": 20411, "sha256": "e4881e1dd5ae7a257d334ed95c50dfbd94375816e92f1ba9886578654ea3b42e"}
+{"time": "2026-09-29 17:22:33", "event": "shard_written", "shard": "train_00011", "tokens": 16777217, "docs": 21014, "sha256": "cc8570b70d6ccb4f6a442654fba6fd86d3d2a6dfecfde2bfdae08438936e3793"}
+{"time": "2026-09-29 17:22:42", "event": "shard_written", "shard": "train_00012", "tokens": 16777217, "docs": 20490, "sha256": "1d625b1f9b3681235c741982ec232479d1ea4d1d0ebb3546d75c715d14063d26"}
+{"time": "2026-09-29 17:22:52", "event": "shard_written", "shard": "train_00013", "tokens": 16777217, "docs": 20746, "sha256": "240394eb35873b429624af72a8ffaa1263a474a151ac81b0ed2f007147c57235"}
+{"time": "2026-09-29 17:23:02", "event": "shard_written", "shard": "train_00014", "tokens": 16777217, "docs": 20537, "sha256": "7b2387655374f6e2cbd282069d7ace1e675dad02451cac1901cfa6af28f7b98d"}
+{"time": "2026-09-29 17:23:11", "event": "shard_written", "shard": "train_00015", "tokens": 16777217, "docs": 20557, "sha256": "c9aa8705fe64c146f2ba6dfffe7b6e5ae73ac219c8a43e9a45ed97d1571b9cce"}
+{"time": "2026-09-29 17:23:11", "event": "shard_written", "shard": "val_00000", "tokens": 65537, "docs": 79, "sha256": "1911768032a1dce205c91fe24f920cf07ebe910fd7583504d78cc2972655c3df"}
+{"time": "2026-09-29 17:23:13", "event": "run_start", "run": "1_dense", "phase": "phase 1 dense", "step": 0, "n_steps": 4000}
+{"time": "2026-09-29 17:28:15", "event": "checkpoint", "run": "1_dense", "step": 3000, "reason": "periodic", "sha256": "21f13908b96ba063", "bytes": 270112095}
+{"time": "2026-09-29 17:29:56", "event": "run_finished", "run": "1_dense", "steps": 4000, "val_end": 4.055449724197388, "minutes": 6.7}
+{"time": "2026-09-29 17:30:06", "event": "run_start", "run": "2_moe", "phase": "phase 2 MoE", "step": 4000, "n_steps": 4000}
+{"time": "2026-09-29 17:35:14", "event": "checkpoint", "run": "2_moe", "step": 5575, "reason": "periodic", "sha256": "a135e3154dc9095b", "bytes": 863482144}
+{"time": "2026-09-29 17:40:16", "event": "checkpoint", "run": "2_moe", "step": 7150, "reason": "periodic", "sha256": "bf9e7c2a13b701ef", "bytes": 865431553}
+{"time": "2026-09-29 17:43:08", "event": "run_finished", "run": "2_moe", "steps": 4000, "val_end": 3.744009256362915, "minutes": 12.6}
+{"time": "2026-09-29 17:43:08", "event": "run_start", "run": "3_dense_control", "phase": "phase 2 dense control", "step": 4000, "n_steps": 4000}
+{"time": "2026-09-29 17:48:10", "event": "checkpoint", "run": "3_dense_control", "step": 7000, "reason": "periodic", "sha256": "d8cdbaaa8884d198", "bytes": 270160801}
+{"time": "2026-09-29 17:49:51", "event": "run_finished", "run": "3_dense_control", "steps": 4000, "val_end": 3.795992374420166, "minutes": 6.7}

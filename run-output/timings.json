@@ -1,0 +1,11 @@
+{
+ "gates": 3.4,
+ "benchmark": 25.6,
+ "data_build": 181.7,
+ "data": 182.1,
+ "run_1_dense": 399.5,
+ "conversion": 9.9,
+ "run_2_moe": 758.8,
+ "run_3_dense_control": 399.5,
+ "notebook_session": 1844.2
+}

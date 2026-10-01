@@ -1,0 +1,9 @@
+{
+ "val_dense": 4.055449724197388,
+ "val_moe_step0": 4.063905239105225,
+ "delta": 0.008455514907836914,
+ "dropped_at_conversion": 0.019733428955078125,
+ "params_dense": 22223232,
+ "params_moe": 71793024,
+ "active_moe": 29325696
+}
