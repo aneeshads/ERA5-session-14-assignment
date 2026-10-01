@@ -38,7 +38,6 @@ the conversion.
 | [`build_notebook.py`](build_notebook.py) | Builds the `.ipynb` from the source; `--flat` also writes a script for local testing |
 | [`run-output/`](run-output/) | Everything the run produced: console log, ledgers, shard manifests, loss curves, summaries |
 | [`figures/`](figures/) | Figures reproduced in this document |
-| [`moe-router-guide.html`](moe-router-guide.html) | Illustrated study guide to the Session 14 lecture |
 
 ---
 
